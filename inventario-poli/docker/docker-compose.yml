@@ -1,0 +1,16 @@
+services:
+  db:
+    image: postgres:16
+    container_name: postgres_container
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: inventario_poli
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./postgresql/postgres_data:/var/lib/postgresql/data
+    networks:
+      - mynetwork
+networks:
+  mynetwork:
